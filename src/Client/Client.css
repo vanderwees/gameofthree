@@ -1,0 +1,26 @@
+.Client {
+  background-color: #fceede;
+  border: 2px solid #F18723;
+  text-align: center;
+  position: relative;
+  margin: 5px;
+}
+
+.Client-header {
+  height: 150px;
+  padding: 20px;
+  color: black;
+}
+
+.Client-title {
+  font-size: 1.5em;
+}
+
+.Client-intro {
+  font-size: large;
+}
+
+@keyframes Client-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
