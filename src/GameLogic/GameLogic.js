@@ -46,9 +46,17 @@ class GameLogic extends Component {
 
   // So we've calculated the new value, and now we can save/play it.
   setValue(newValue) {
-    if (newValue) {
-      this.setState({currentValue: newValue});
+    let winner = null;
+    if (newValue === 1) {
+      winner = 'Piet';
     }
+    if (newValue) {
+      this.setState({
+        currentValue: newValue,
+        winner: winner
+      });
+    }
+
   }
 
 
@@ -63,6 +71,14 @@ class GameLogic extends Component {
             <br />
           {
             this.getNextValue(-1)
+          }
+          <button onClick={ () => { this.setValue(this.getNextValue(-1)) } }>-1</button>
+          <button onClick={ () => { this.setValue(this.getNextValue(0)) } }>0</button>
+          <button onClick={ () => { this.setValue(this.getNextValue(1)) } }>+1</button>
+          <br/>
+          <strong>Winner</strong>
+          {
+            this.state.winner
           }
         </p>
       </div>
