@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
 
@@ -29,7 +30,9 @@ class Client extends Component {
     return (
       <div className="Client">
         <header className="Client-header">
-          <h1 className="Client-title">Player { this.state.playerID } </h1>
+          <AppBar
+             title={ this.state.playerID ? "Player " + this.state.playerID : "Setup game" }
+           />
         </header>
         <p className="Client-intro">
             { /* We're abusing Avatar component a bit, as it is just what we needed */ }
