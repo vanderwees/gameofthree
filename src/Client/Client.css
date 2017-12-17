@@ -7,7 +7,7 @@
 }
 
 .Client-header {
-  height: 150px;
+  height: auto;
   padding: 20px;
   color: black;
 }
@@ -18,28 +18,6 @@
 
 .Client-intro {
   font-size: large;
-}
-
-.CurrentValueBox {
-  background-color: white;
-  border-radius: 50%;
-  width: 10em;
-  height: 10em;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  left: 50%;
-  margin-left: -5em;
-  margin-top: -5em;
-}
-
-.CurrentValueBox > p {
-  font-size: 400%;
-  /*position: relative;
-  top: 50%;
-  left: 50%;
-  margin-top: -10em;
-  margin-left: -10em;*/
 }
 
 @keyframes Client-logo-spin {

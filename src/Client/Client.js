@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import RaisedButton from 'material-ui/RaisedButton';
+import Avatar from 'material-ui/Avatar';
 
 import './Client.css';
 
@@ -19,6 +20,9 @@ class Client extends Component {
     const styles = {
       button: {
         margin: '12px'
+      },
+      ball: {
+        margin: '12px'
       }
     };
 
@@ -28,13 +32,16 @@ class Client extends Component {
           <h1 className="Client-title">Player { this.state.playerID } </h1>
         </header>
         <p className="Client-intro">
-          <div className="CurrentValueBox">
-            <p>
-              {
-                this.state.currentValue || 'X'
-              }
-            </p>
-          </div>
+            { /* We're abusing Avatar component a bit, as it is just what we needed */ }
+            <Avatar
+            color={'#000'}
+            backgroundColor={'#fff'}
+            size={200}
+            style={styles.ball}
+          >
+            X
+          </Avatar>
+
           <h2>Add one, remove one or do nothing?</h2>
           <RaisedButton primary={true} style={styles.button} onClick={ () => { this.setValue(this.getNextValue(-1)) } } label="Remove one" />
           <RaisedButton style={styles.button} onClick={ () => { this.setValue(this.getNextValue(0)) } } label="It's ok"/>
