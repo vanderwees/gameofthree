@@ -12,27 +12,39 @@ import Server from './Server/Server.js';
 
 class App extends Component {
   render() {
+    const { store } = this.props;
+
     return (
       <MuiThemeProvider>
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">A Game of Three</h1>
           </header>
-          <p className="App-intro">
+          <div className="App-intro">
             Intro text goes here.
-          </p>
-          <p className="App-body">
+          </div>
+          <div className="App-body">
             <Card className="Client-Card">
-              <Client />
+              <Client
+                store={this.props.store}
+                currentValue={store.getState()}
+                winner={store.getState()}
+                playerID={store.getState()}
+                dispatch={store.dispatch}
+                />
             </Card>
             <Card className="Server-Card">
               <Server />
             </Card>
-          </p>
+          </div>
         </div>
       </MuiThemeProvider>
     );
   }
+}
+
+static contextTypes = {
+  store: PropTypes.object.isRequired
 }
 
 export default App;

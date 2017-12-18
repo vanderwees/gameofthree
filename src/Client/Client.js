@@ -4,9 +4,9 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
 
-import { connect } from 'react-redux';
-
 import './Client.css';
+
+
 
 /*
 value={store.getState()}
@@ -26,7 +26,7 @@ class Client extends Component {
   }
 
   render() {
-    const { store, playerID, currentValue } = this.props;
+    const { store } = this.props;
 
     const styles = {
       button: {
@@ -36,28 +36,24 @@ class Client extends Component {
         margin: '12px'
       }
     };
-    console.log(store.getState(), currentValue);
 
     return (
       <div className="Client">
-        <AppBar
-           title={ playerID ? "Player " + playerID : "Setup game" }
-         />
-       <div className="Client-intro">
-            { /* We're abusing Avatar component a bit, as it is just what we needed */ }
-            <Avatar
+        <AppBar title={ this.state.playerID ? "Player " + this.state.playerID : "Setup game" } />
+        <p className="Client-intro">
+          { /* We're abusing Avatar component a bit, as it is just what we needed */ }
+          <Avatar
             color="#fff"
             backgroundColor="#F18723"
             size={200}
-            style={styles.ball}
-          >
-            { this.props.store.getState() }
+            style={styles.ball}>
+            { store.getState() }
           </Avatar>
 
           <h2>Add one, remove one or do nothing?</h2>
-          <RaisedButton primary={true} style={styles.button} onClick={ () => this.props.dispatch({ type: 'DECREMENT' }) } label="Remove one" />
+          <RaisedButton primary={true} style={styles.button} onClick={ () => { store.dispatch({ type: 'DECREMENT' }) } } label="Remove one" />
           <RaisedButton style={styles.button} onClick={ () => { this.setValue(this.getNextValue(0)) } } label="It's ok"/>
-          <RaisedButton primary={true} style={styles.button} onClick={ () => { this.props.dispatch({ type: 'INCREMENT' }); } } label="Add one"/>
+          <RaisedButton primary={true} style={styles.button} onClick={ () => store.dispatch({ type: 'INCREMENT' }) } label="Add one"/>
 
           <br/>
           {
@@ -67,12 +63,10 @@ class Client extends Component {
           {
             this.state.winner
           }
-        </div>
+        </p>
       </div>
     );
   }
 }
-
-Client = connect()(Client);
 
 export default Client;
