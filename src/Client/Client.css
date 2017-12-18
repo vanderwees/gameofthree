@@ -1,15 +1,11 @@
 .Client {
-  background-color: #fceede;
-  border: 2px solid #F18723;
-  text-align: center;
-  position: relative;
-  margin: 5px;
+
 }
 
 .Client-header {
   height: auto;
   padding: 0;
-  color: black;
+  background-color: #F18723;
 }
 
 .Client-title {

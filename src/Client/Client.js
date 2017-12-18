@@ -29,16 +29,14 @@ class Client extends Component {
 
     return (
       <div className="Client">
-        <header className="Client-header">
-          <AppBar
-             title={ this.state.playerID ? "Player " + this.state.playerID : "Setup game" }
-           />
-        </header>
+        <AppBar
+           title={ this.state.playerID ? "Player " + this.state.playerID : "Setup game" }
+         />
         <p className="Client-intro">
             { /* We're abusing Avatar component a bit, as it is just what we needed */ }
             <Avatar
-            color={'#000'}
-            backgroundColor={'#fff'}
+            color="#fff"
+            backgroundColor="#F18723"
             size={200}
             style={styles.ball}
           >

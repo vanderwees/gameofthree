@@ -26,12 +26,15 @@
   display: flex;
 }
 
-.Server {
+.Server-Card {
   width: 200px;
+  margin: 12px;
 }
 
-.Client {
+.Client-Card {
   flex: 1;
+  margin: 12px;
+  margin-right: 0;
 }
 
 @keyframes App-logo-spin {

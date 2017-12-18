@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Card from 'material-ui/Card';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,8 +22,12 @@ class App extends Component {
             Intro text goes here.
           </p>
           <p className="App-body">
-            <Client className="App-child" />
-            <Server className="App-child" />
+            <Card className="Client-Card">
+              <Client />
+            </Card>
+            <Card className="Server-Card">
+              <Server />
+            </Card>
           </p>
         </div>
       </MuiThemeProvider>

@@ -1,9 +1,9 @@
 .Server {
-  background-color: #fceede;
-  border: 2px solid #F18723;
-  text-align: center;
-  position: relative;
-  margin: 5px;
+  background-color: #292C34;
+  color: #ABB1BD;
+  font-family: monospace;
+  min-height: 500px;
+  margin: 0;
 }
 
 .Server-logo {

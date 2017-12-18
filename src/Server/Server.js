@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './Server.css';
 
+import AppBar from 'material-ui/AppBar';
+
 import GameLogic from '../GameLogic/GameLogic.js';
 
 class Server extends Component {
   render() {
     return (
       <div className="Server">
-        <header className="Server-header">
-          <h1 className="Server-title">Here comes the server (UI?)</h1>
-        </header>
+        <AppBar
+           title="Server"
+         />
+        <h1 className="Server-title">Here comes the server (UI?)</h1>
         <p className="Server-intro">
           <GameLogic />
         </p>
