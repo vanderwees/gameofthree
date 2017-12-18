@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ReduxProvider } from 'react-redux';
+import { Provider } from 'react-redux';
 import App from './components/App';
 import './index.css';
 
@@ -15,12 +15,8 @@ import gameStore from './reducers';
 const store = createStore(gameStore, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-  <ReduxProvider store={store}>
+  <Provider store={store}>
     <App store={ store }/>
-  </ReduxProvider>, document.getElementById('root'));
-
-  static contextTypes = {
-    store: PropTypes.object.isRequired
-  }
+  </Provider>, document.getElementById('root'));
 
 registerServiceWorker();

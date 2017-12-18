@@ -43,8 +43,4 @@ class App extends Component {
   }
 }
 
-static contextTypes = {
-  store: PropTypes.object.isRequired
-}
-
 export default App;

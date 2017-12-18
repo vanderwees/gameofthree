@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
@@ -51,7 +51,7 @@ class Client extends Component {
             size={200}
             style={styles.ball}
           >
-            { this.props.store.getState() }
+            { this.context.store.getState() }
           </Avatar>
 
           <h2>Add one, remove one or do nothing?</h2>
@@ -71,6 +71,10 @@ class Client extends Component {
       </div>
     );
   }
+}
+
+Client.contextTypes = {
+  store: PropTypes.object.isRequired
 }
 
 Client = connect()(Client);
