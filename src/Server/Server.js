@@ -12,10 +12,8 @@ class Server extends Component {
         <AppBar
            title="Server"
          />
-        <h1 className="Server-title">Here comes the server (UI?)</h1>
-        <p className="Server-intro">
-          <GameLogic />
-        </p>
+       <h1 className="Server-title">Server console</h1>
+       <GameLogic />
       </div>
     );
   }

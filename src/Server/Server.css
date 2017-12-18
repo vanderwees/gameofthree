@@ -6,26 +6,6 @@
   margin: 0;
 }
 
-.Server-logo {
-  animation: Server-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.Server-header {
-  height: 150px;
-  padding: 20px;
-  color: black;
-}
-
 .Server-title {
   font-size: 1.5em;
-}
-
-.Server-intro {
-  font-size: large;
-}
-
-@keyframes Server-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
